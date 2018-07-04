@@ -30,6 +30,12 @@ def main():
     print(dataset.describe())
     print("....")
 
+    #Visualizing the data
+    dataset.plot(kind='box',subplots=True,layout=(10,1),sharex=False,sharey=False)
+    plt.show()
+    dataset.hist()
+    plt.show()
+
 
 
 

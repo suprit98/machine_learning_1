@@ -34,6 +34,8 @@ def main():
     print("....")
     print("Statistical summary of data")
     print(dataset.describe())
+    print("Class distribution")
+    print(dataset.groupby('class').size())
     print("....")
 
     #Visualizing the data
@@ -70,6 +72,12 @@ def main():
         names.append(name)
         msg = "%s: %f (%f)" % (name,cv_results.mean(),cv_results.std())
         print(msg)
+
+    lda = LinearDiscriminantAnalysis()
+    lda.fit(X_train,y_train)
+    predictions = lda.predict(X_validation)
+    print(accuracy_score(y_validation,predictions))
+    print(classification_report(y_validation,predictions))
 
 
 

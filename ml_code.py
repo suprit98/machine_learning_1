@@ -19,7 +19,18 @@ def main():
     names = ["id","clump thickness","uniformity of cell size","uniformity of cell shape","marginal adhesion","single epithelial cell size","bare nuclei","bland chromatin","normal nucleoli","mitoses","class"]
     dataset = pandas.read_csv(url,names=names)
 
-    
+    #Summarizing data
+    print("Summarizing Data")
+    print("Shape of dataset"+str(dataset.shape))
+    print("....")
+    print("Few instances of data")
+    print(dataset.head(5))
+    print("....")
+    print("Statistical summary of data")
+    print(dataset.describe())
+    print("....")
+
+
 
 
 
